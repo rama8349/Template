@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  price: 
+  description: MyText
+  manufacture_year: 2020-10-07
+
+two:
+  name: MyString
+  price: 
+  description: MyText
+  manufacture_year: 2020-10-07

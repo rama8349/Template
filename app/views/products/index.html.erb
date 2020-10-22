@@ -1,0 +1,32 @@
+
+<%test= params[:controller].classify.constantize.column_names%>
+
+
+<div class="container">
+<div class="row">
+<table class="table table-stripped">
+<thead>
+	<tr>
+	<%test.each do |t|%>
+
+	<th><%=t%><div class="btn-group-vertical">
+            <a href='products?sort=<%=t%> desc' class="btn btn-xs btn-link p-0">
+                <i class="fas fa-sort"></i>
+            </a>
+            </div></th>
+	<%end%>
+		</tr>
+		</thead>
+		
+		<%=render partial: "filters"%>
+		<tbody id="product_form">
+		<%=render @products%>	
+		</tbody>
+		
+	</table>
+	</div>
+	</div>
+	
+<div class="digg_pagination">
+<%= will_paginate @products, renderer: BootstrapPagination::Rails, previous_label: 'Older', next_label: 'Newer' %>
+</div>

@@ -1,0 +1,19 @@
+
+
+<%test= params[:controller].classify.constantize.column_names%>
+
+<%=simple_form_for :product , url: products_path , method: :get,remote: true, input_html: { class: 'default_class' } do |f|%>
+<tr>
+
+<%test.each do |a|%>
+<th>
+<%=f.input "#{a}", label: false, wrapper_html: { class: 'options' }%>
+
+<%= f.submit  "ddd" ,as: :hidden, style:"display: none"%>
+</th>
+
+
+<%end%>
+</tr>
+
+<%end%>

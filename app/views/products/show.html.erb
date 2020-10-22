@@ -1,0 +1,15 @@
+<%test= params[:controller].classify.constantize.column_names%>
+<div class="table-responsive-md">
+	<table class="table">
+	<tr>
+	<%data=(0..test.length-1).map{|x| "#{test[x]} "} %>
+	<th><%=data.join(",").gsub(',', '')%></th>
+		</tr>
+		<tr>
+			<%data1=(0..test.length-1).collect{|x| @product[test[x]]}%>
+			<td><%=data1.join(",").gsub(',', '')%></td>
+		</tr>
+		
+	</table>
+	<div><%=link_to "Back", products_path%></div>
+</div>
